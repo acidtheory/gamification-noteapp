@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://b86cheuyy7vtj"]
+
+[ext_resource type="Script" uid="uid://de4xp6nthtika" path="res://scripts/screens/player/player_data.gd" id="1_54xec"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_23oa2"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_54xec"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_bb6al"]
+font_size = 32
+
+[node name="Profile" type="Control" unique_id=1446135575]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=778484461]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="PlayerData" type="VBoxContainer" parent="MarginContainer" unique_id=1418607331]
+layout_mode = 2
+theme_override_constants/separation = 16
+script = ExtResource("1_54xec")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PlayerData" unique_id=1067176717]
+layout_mode = 2
+theme_override_constants/separation = -16
+
+[node name="NameLabel" type="Label" parent="MarginContainer/PlayerData/VBoxContainer" unique_id=613035495]
+layout_mode = 2
+text = "Carlos"
+label_settings = SubResource("LabelSettings_23oa2")
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/PlayerData/VBoxContainer" unique_id=1177814055]
+layout_mode = 2
+text = "Nivel 30"
+label_settings = SubResource("LabelSettings_54xec")
+
+[node name="StreakLabel" type="Label" parent="MarginContainer/PlayerData/VBoxContainer" unique_id=1144752349]
+layout_mode = 2
+text = "Streak 10"
+label_settings = SubResource("LabelSettings_54xec")
+
+[node name="ExpBar" type="ProgressBar" parent="MarginContainer/PlayerData" unique_id=801065267]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PlayerData" unique_id=756353629]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PlayerData/PanelContainer" unique_id=447684232]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PlayerData/PanelContainer/VBoxContainer" unique_id=801240563]
+layout_mode = 2
+text = "Logros"
+label_settings = SubResource("LabelSettings_bb6al")
+
+[node name="AchievementList" type="VBoxContainer" parent="MarginContainer/PlayerData/PanelContainer/VBoxContainer" unique_id=1475055597]
+layout_mode = 2
+size_flags_vertical = 3

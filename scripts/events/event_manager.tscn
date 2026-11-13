@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c5b50flfbagy1"]
+
+[ext_resource type="Script" uid="uid://c6ig1jpongxql" path="res://scripts/events/achievement_app_opener.gd" id="1_x1h8y"]
+[ext_resource type="Script" uid="uid://32j212kgafyb" path="res://scripts/events/app_opened_exp_reward.gd" id="2_rtmqw"]
+[ext_resource type="Script" uid="uid://dglfulj8lygpt" path="res://scripts/events/new_chapter_reward.gd" id="3_6vunl"]
+[ext_resource type="Script" uid="uid://ch2p4rw8x4x3o" path="res://scripts/events/type_exp_reward.gd" id="3_e8h1d"]
+[ext_resource type="Script" uid="uid://b3x2avyq234a2" path="res://scripts/events/chapters_opened_10.gd" id="5_4qbav"]
+[ext_resource type="Script" uid="uid://bjinxdyuvy42a" path="res://scripts/events/streak_manager.gd" id="6_jy2hr"]
+
+[node name="EventManager" type="Node" unique_id=1770035789]
+
+[node name="Rewards" type="Node" parent="." unique_id=1326523923]
+
+[node name="app_opened_exp_reward" type="Node" parent="Rewards" unique_id=1219717112]
+script = ExtResource("2_rtmqw")
+id = "app_opened_exp_reward"
+cooldown = 5.0
+metadata/_custom_type_script = "uid://dfu8ibv2qny1f"
+
+[node name="type_exp_reward" type="Node" parent="Rewards" unique_id=1274334024]
+script = ExtResource("3_e8h1d")
+id = "type_exp_reward"
+cooldown = inf
+metadata/_custom_type_script = "uid://dfu8ibv2qny1f"
+
+[node name="new_chapter_reward" type="Node" parent="Rewards" unique_id=348592478]
+script = ExtResource("3_6vunl")
+id = "new_chapter_reward"
+cooldown = inf
+metadata/_custom_type_script = "uid://dfu8ibv2qny1f"
+
+[node name="Achievements" type="Node" parent="." unique_id=985364232]
+
+[node name="app_opener" type="Node" parent="Achievements" unique_id=2100778349]
+script = ExtResource("1_x1h8y")
+id = "app_opener"
+cooldown = 0.0
+metadata/_custom_type_script = "uid://dfu8ibv2qny1f"
+
+[node name="chapters_opened_10" type="Node" parent="Achievements" unique_id=2062733333]
+script = ExtResource("5_4qbav")
+cooldown = inf
+metadata/_custom_type_script = "uid://dfu8ibv2qny1f"
+
+[node name="StreakManager" type="Node" parent="." unique_id=688696783]
+script = ExtResource("6_jy2hr")
+id = "streak_manager"

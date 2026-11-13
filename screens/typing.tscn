@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dos0qpha774hu"]
+
+[ext_resource type="Script" uid="uid://ctpxtpi7f5fmt" path="res://scripts/screens/typing.gd" id="1"]
+
+[node name="Typing" type="Control" unique_id=811350553]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1906524440]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Content" type="VBoxContainer" parent="MarginContainer" unique_id=1299987167]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Header" type="HBoxContainer" parent="MarginContainer/Content" unique_id=1195846414]
+custom_minimum_size = Vector2(0, 112)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ChapterOption" type="OptionButton" parent="MarginContainer/Content/Header" unique_id=977143725]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+
+[node name="NewChapterButton" type="Button" parent="MarginContainer/Content/Header" unique_id=865499074]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "+"
+
+[node name="ContentEditor" type="TextEdit" parent="MarginContainer/Content" unique_id=1370232234]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+wrap_mode = 1
+
+[connection signal="item_selected" from="MarginContainer/Content/Header/ChapterOption" to="." method="_on_chapter_option_item_selected"]
+[connection signal="pressed" from="MarginContainer/Content/Header/NewChapterButton" to="." method="_on_new_chapter_pressed"]
+[connection signal="text_changed" from="MarginContainer/Content/ContentEditor" to="." method="_on_content_editor_text_changed"]
